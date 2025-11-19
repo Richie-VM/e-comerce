@@ -1,0 +1,240 @@
+:root {
+  --50: #f4f6fb;
+  --100: #e8edf6;
+  --200: #ccd8eb;
+  --300: #9fb9da;
+  --400: #6b93c5;
+  --500: #4876af;
+  --600: #375e95;
+  --700: #2d4b77;
+  --800: #284064;
+  --900: #263854;
+  --950: #192438;
+}
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  background-color: black;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 1rem;
+}
+nav a {
+  color: var(--50);
+  text-decoration: none;
+  font-size: clamp(1vw, 1.5vw 2vw);
+}
+nav > a {
+  font-size: 1rem;
+}
+nav div:last-child a:nth-child(2) {
+  display: none;
+}
+nav div:last-child a:last-child {
+  display: none;
+}
+
+/* Banner */
+.banner {
+  text-align: center;
+  height: 30vh;
+  background-image: url(../img/index/04.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  background-blend-mode: color;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f4f6fb;
+  margin-bottom: 1.5rem;
+}
+.banner h2 {
+  font-weight: 200;
+  font-size: 2rem;
+  padding: 0 40px;
+}
+/* Gallery */
+.gallery > div {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.gallery div {
+  padding: 20px;
+}
+.gallery div a {
+  color: black;
+}
+.gallery div h4 {
+  font-weight: 300;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+}
+.gallery hgroup h5,
+h2 {
+  font-weight: 300;
+}
+/* Imagenes */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+article {
+  position: relative;
+  overflow: hidden;
+}
+.gallery a {
+  text-decoration: none;
+  color: white;
+}
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery p {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  z-index: 2;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+/* Footer */
+footer {
+  margin-top: 5rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 2rem 4rem;
+  color: white;
+}
+footer a {
+  padding: 1rem 0;
+  text-decoration: none;
+  color: white;
+}
+footer div:first-child h4 {
+  padding: 1rem 0;
+}
+footer div:first-child {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+footer div:last-child {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+@media (min-width: 767px) {
+  nav {
+    padding: 20px 2rem;
+  }
+  nav div:last-child a:nth-child(2) {
+    display: block;
+  }
+  nav div:last-child a:last-child {
+    display: block;
+  }
+  nav div:first-child {
+    flex: 1;
+  }
+  nav a {
+    font-size: 1.5rem;
+  }
+  nav > a {
+    text-align: center;
+    flex: 2;
+    font-size: 1.5rem;
+  }
+  nav div:last-child {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+  }
+
+  /*Banner*/
+  .banner {
+    height: 60vh;
+  }
+  .banner h2 {
+    font-size: 2.5rem;
+  }
+
+  /* Gallery */
+  .gallery div {
+    padding: 20px 10%;
+  }
+  .gallery div h4 {
+    font-size: 1.3rem;
+  }
+  .gallery hgroup h5 {
+    font-size: 1rem;
+  }
+  .gallery hgroup h2 {
+    font-size: 2rem;
+  }
+
+  /* Imagenes */
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100px 300px 300px 300px;
+  }
+  .gallery div:nth-child(1) {
+    grid-column: 1/4;
+    grid-row: 1/2;
+  }
+  .gallery article:nth-child(2) {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+  .gallery article:nth-child(6) {
+    grid-column: 3/4;
+    grid-row: 3/5;
+  }
+
+  .gallery img:hover {
+    transition: all 0.5s ease;
+  }
+  .gallery img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Footer */
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 4rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0d0d0d;
+    color: #f5f5f5;
+  }
+  .gallery div a {
+    color: white;
+    background-color: #0d0d0d;
+  }
+}
